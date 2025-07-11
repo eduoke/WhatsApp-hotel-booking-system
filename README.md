@@ -1,4 +1,4 @@
-# hotel_room_whatsApp_reservation
+# About
 A WhatsApp business tool for hotel reservations. This project combines messaging automation, payment processing, and booking management.
 
 # WhatsApp Hotel Booking System - User Experience Flow
