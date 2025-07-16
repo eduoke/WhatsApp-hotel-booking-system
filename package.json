@@ -1,0 +1,24 @@
+{
+  "name": "whatsapp-hotel-booking-system",
+  "version": "1.0.0",
+  "description": "A WhatsApp business tool for hotel reservations. This project combines messaging automation, payment processing and booking management.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduoke/WhatsApp-hotel-booking-system.git"
+  },
+  "keywords": [
+    "WhatsApp",
+    "business",
+    "tool"
+  ],
+  "author": "Edward .A. Okech",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eduoke/WhatsApp-hotel-booking-system/issues"
+  },
+  "homepage": "https://github.com/eduoke/WhatsApp-hotel-booking-system#readme"
+}
