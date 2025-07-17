@@ -1,5 +1,5 @@
 const { Pool } = require('pg'); 
-const settings = require('../settings');
+const config = require('./vars'); // Import application configuration
 
 let pool; 
 
@@ -16,11 +16,11 @@ async function connectDB() {
     }
 
     pool = new Pool({
-        user: settings.DB_USER,
-        host: settings.DB_HOST,
-        database: settings.DB_NAME,
-        password: settings.DB_PASS,
-        port: settings.DB_PORT,
+        user: config.DB_USER,
+        host: config.DB_HOST,
+        database: config.DB_NAME,
+        password: config.DB_PASS,
+        port: config.DB_PORT,
         connectionTimeoutMillis: 5000, // 5 seconds connection timeout
     });
 
