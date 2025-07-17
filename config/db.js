@@ -1,7 +1,7 @@
 const { Pool } = require('pg'); 
 const config = require('./vars'); // Import application configuration
 
-let pool; 
+let pool; // Declare the connection pool globally within this module
 
 /**
  * Asynchronously initializes and connects to the PostgreSQL database pool.
@@ -49,7 +49,21 @@ async function connectDB() {
     }
 }
 
-// Export the async function to initialize the database
+/**
+ * Returns the initialized MySQL connection pool.
+ * This function should only be called after `connectDB()` has successfully completed.
+ * @returns {pg.Pool} The postgreSQL connection pool.
+ * @throws {Error} If the database pool has not been initialized yet.
+ */
+function getPool() {
+    if (!pool) {
+        throw new Error('Database pool has not been initialized. Call connectDB() first.');
+    }
+    return pool;
+}
+
+// Export the async function to initialize the database and a helper to get the pool
 module.exports = {
     connectDB,
+    getPool
 };
