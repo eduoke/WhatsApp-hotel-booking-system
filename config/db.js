@@ -18,8 +18,8 @@ async function connectDB() {
     pool = new Pool({
         user: settings.DB_USER,
         host: settings.DB_HOST,
-        database: settings.DB_DATABASE,
-        password: settings.DB_NAME,
+        database: settings.DB_NAME,
+        password: settings.DB_PASS,
         port: settings.DB_PORT,
         connectionTimeoutMillis: 5000, // 5 seconds connection timeout
     });
