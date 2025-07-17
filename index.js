@@ -1,7 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const crypto = require('crypto');
-import { settings } from './settings';
+const settings = require('./settings');
 const { connectDB } = require('./config/db'); // Import the async connectDB function
 const mainRouter = require('./routes'); // Import the main router from routes/index.js
 
