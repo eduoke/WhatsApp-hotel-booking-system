@@ -1,5 +1,6 @@
 // Application-wide Configurations
 // This file centralizes access to environment variables.
+require('dotenv').config(); 
 
 module.exports = {
     // WhatsApp API Credentials
