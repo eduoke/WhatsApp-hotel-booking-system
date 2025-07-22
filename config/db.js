@@ -50,7 +50,7 @@ async function connectDB() {
 }
 
 /**
- * Returns the initialized MySQL connection pool.
+ * Returns the initialized postgresSQL connection pool.
  * This function should only be called after `connectDB()` has successfully completed.
  * @returns {pg.Pool} The postgreSQL connection pool.
  * @throws {Error} If the database pool has not been initialized yet.
