@@ -4,9 +4,21 @@ const crypto = require('crypto');
 const settings = require('./config/vars'); // Import application settings
 const { connectDB } = require('./config/db'); // Import the async connectDB function
 const mainRouter = require('./routes'); // Import the main router from routes/index.js
+const livereload = require('livereload'); // Import livereload for development convenience
+const connectLiveReload = require('connect-livereload'); // Middleware for live reloading
 
 const app = express();
 const port = settings.PORT;
+
+// --- Live Reload Setup (Development Only) ---
+if (process.settings.NODE_ENV === 'development') {
+    const liveReloadServer = livereload.createServer();
+    liveReloadServer.watch(__dirname + './'); // Watch the public directory for changes
+    app.use(connectLiveReload()); // Use the connect-livereload middleware
+}
+
+// Server static files 
+app.use(express.static('public')); // Serve static files from the 'public' directory
 
 // --- Express Middleware ---
 app.use(express.json()); // Middleware to parse JSON request bodies
