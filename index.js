@@ -11,7 +11,7 @@ const app = express();
 const port = settings.PORT;
 
 // --- Live Reload Setup (Development Only) ---
-if (process.settings.NODE_ENV === 'development') {
+if (settings.ENV === 'development') {
     const liveReloadServer = livereload.createServer();
     liveReloadServer.watch(__dirname + './'); // Watch the public directory for changes
     app.use(connectLiveReload()); // Use the connect-livereload middleware
