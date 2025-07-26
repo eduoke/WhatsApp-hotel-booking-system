@@ -4,6 +4,8 @@
   "description": "A WhatsApp business tool for hotel reservations. This project combines messaging automation, payment processing and booking management.",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node index.js",
     "test": "jest"
   },
   "repository": {
@@ -29,5 +31,8 @@
     "jest": "^30.0.5",
     "pg": "^8.16.3",
     "supertest": "^7.1.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
