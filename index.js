@@ -1,12 +1,12 @@
 const express = require('express');
 const axios = require('axios');
 const crypto = require('crypto');
-const settings = require('./settings');
+const settings = require('./config/vars'); // Import application settings
 const { connectDB } = require('./config/db'); // Import the async connectDB function
 const mainRouter = require('./routes'); // Import the main router from routes/index.js
 
 const app = express();
-const port = settings.SERVER_PORT || 3000;
+const port = settings.PORT;
 
 // --- Express Middleware ---
 app.use(express.json()); // Middleware to parse JSON request bodies
@@ -28,7 +28,7 @@ async function startServer() {
 
         // Basic root route
         app.get('/', (req, res) => {
-            res.send('Welcome to the Node.js Express API with PostgreSQL!');
+            res.send('Welcome to the your WhatsApp Hotel Booking System API!');
         });
 
         // --- Global Error Handling Middleware (Optional) ---
