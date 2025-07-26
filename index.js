@@ -7,6 +7,8 @@ const mainRouter = require('./routes'); // Import the main router from routes/in
 const livereload = require('livereload'); // Import livereload for development convenience
 const connectLiveReload = require('connect-livereload'); // Middleware for live reloading
 
+const { errorHandler, AppError } = require('./middleware/errorHandler'); // Import the error handling middleware
+
 const app = express();
 const port = settings.PORT;
 
@@ -45,7 +47,7 @@ async function startServer() {
 
         // --- Global Error Handling Middleware (Optional) ---
         // If you create an errorHandler.js in your middleware folder, you would uncomment this:
-        // app.use(require('./middleware/errorHandler'));
+        app.use(require('./middleware/errorHandler'));
 
         // --- Start the Express Server ---
         app.listen(port, () => {
